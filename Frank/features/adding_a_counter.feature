@@ -4,7 +4,7 @@ Feature:
   So I can count
 
   Scenario: Adding a counter
-    #Given I launch the app for the first time
+    Given I've just launched the app for the first time
     When I touch the Add button
     And I choose CountUp
     And I enter a group name of "Nice Things"

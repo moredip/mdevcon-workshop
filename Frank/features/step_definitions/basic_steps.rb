@@ -1,3 +1,13 @@
+require 'pathname'
+
+Given /^I've just launched the app for the first time$/ do
+  Pathname.glob("#{ENV['HOME']}/Library/Application Support/iPhone Simulator/*/Applications/*/Documents/CountItOut.sqlite").each do |sqlite_file|
+    sqlite_file.delete
+  end
+
+  launch_app app_path
+end
+
 When /^I touch the Add button$/ do
   touch %Q|view:'UINavigationButton' marked:'Add'|
   wait_for_nothing_to_be_animating
