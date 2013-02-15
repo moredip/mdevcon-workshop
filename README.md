@@ -23,3 +23,25 @@ sudo gem install frank-cucumber
 ```
 
 If you're using a system like [rvm](https://rvm.io/rvm/install/) or [rbenv](https://github.com/sstephenson/rbenv/#installation) to manage the ruby setup on your machine (and I recommend that you do) then you probably won't need to use sudo in that command.
+
+Once you've done that you should be able to run the `frank` command in the terminal, and get output something like this:
+```
+⋙ frank
+Tasks:
+  frank build             # builds a Frankified version of your native app
+  frank build_and_launch  # rebuild a Frankfied version of your app then ...
+  frank console           # launch a ruby console connected to your Frank...
+  frank help [TASK]       # Describe available tasks or one specific task
+  frank inspect           # launch Symbiote in the browser
+  frank launch            # open the Frankified app in the simulator
+  frank setup             # set up your iOS app by adding a Frank subdire...
+  frank skeleton          # an alias for setup
+  frank update            # updates the frank server components inside yo...
+
+```
+
+At this point you're all set up. To double-check your setup you can run the `check-setup` script to confirm you have everything ready
+
+```
+./check-setup
+```
