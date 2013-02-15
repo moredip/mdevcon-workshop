@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+puts 'Checking your Frank setup...'
+
+unless system("which frank > /dev/null")
+	puts <<-EOS
+    You don't appear to have the frank-cucumber gem installed. 
+    Run the following command and then try again:
+
+    sudo gem install frank-cucumber
+  EOS
+  exit 1
+end
+
+puts 'using Frank to build the app...'
+`frank build`
+exit 2 unless 0 == $?
+
+puts 'using Frank to launch the app...'
+`frank launch`
+exit 3 unless 0 == $?
+
+puts 'verifying we can talk to the Frankified app...'
+def World(_)
+end
+def AfterConfiguration
+end
+
+require 'frank-cucumber'
+include Frank::Cucumber::FrankHelper
+unless frankly_ping
+  puts "\nfailed to talk to the Frankified app :("
+  exit 4
+end
+
+puts "...everything looks good."
