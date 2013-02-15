@@ -40,7 +40,7 @@ Tasks:
 
 ```
 
-At this point you're all set up. To double-check your setup you can run the `check-setup` script to confirm you have everything ready
+At this point you're all set up. To double-check everything you can run the `check-setup` script to confirm that you have everything ready:
 
 ```
 ./check-setup
@@ -51,3 +51,5 @@ using Frank to launch the app...
 verifying we can talk to the Frankified app...
 ...everything looks good.
 ```
+
+If there are any problems along the way please feel free to get in touch and ask me for help: phodgson@thoughtworks.com
