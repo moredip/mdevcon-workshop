@@ -19,7 +19,7 @@ git clone https://github.com/moredip/mdevcon-workshop.git ./
 
 Next you'll need to install a couple of ruby gems (a *gem* is a packaged ruby library). You can do that using the following command:
 ``` bash
-sudo gem install frank-cucumber pry
+sudo gem install frank-cucumber pry --no-rdoc --no-ri
 ```
 
 If you're using a system like [rvm](https://rvm.io/rvm/install/) or [rbenv](https://github.com/sstephenson/rbenv/#installation) to manage the ruby setup on your machine (and I recommend that you do) then you probably won't need to use sudo in that command.
