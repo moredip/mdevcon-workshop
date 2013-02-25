@@ -7,7 +7,9 @@ This repo contains a sample iOS app plus tests. It accompanies the Mobile Accept
 Setup Instructions
 =====
 
-Because we'll be testing an iOS application you will need a mac laptop ***with XCode installed***. These instructions assume basic familiarity with the terminal. 
+Because we'll be testing an iOS application you will need a mac laptop ***with XCode and [XCode command-line tools](http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools) installed***.
+
+These instructions assume basic familiarity with the terminal. 
 
 First you'll need to download this repo. You can do that from the terminal using the following commands:
 
