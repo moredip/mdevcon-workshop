@@ -39,7 +39,7 @@ Then /^I should be on the main screen$/ do
 end
 
 Then /^I should see the "(.*?)" group$/ do |group_name|
-  wait_for_element_to_exist %Q|view:'UITableViewHeaderFooterView' marked:'#{group_name}'|
+  wait_for_element_to_exist %Q|tableView view marked:'#{group_name}'|
 end
 
 Then /^I should see the "(.*?)" counter$/ do |counter_name|
