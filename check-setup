@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
+
 puts 'Checking your Frank setup...'
 
 unless system("which frank > /dev/null")
