@@ -3,11 +3,15 @@ Sample App for mdevcon
 
 This repo contains a sample iOS app plus tests. It accompanies the Mobile Acceptance Testing tutorial at [mdevcon 2013](http://mdevcon.com)
 
+Because we'll be testing an iOS application you will need a mac laptop ***with XCode and [XCode command-line tools](http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools) installed***.
+
+We'll be using the ruby programming language plus a tool called Frank to automate this sample application. It is strongly 
+recommended that you use a system like [rvm](https://rvm.io/rvm/install/) or [rbenv](https://github.com/sstephenson/rbenv/#installation)  to manage the ruby setup on your laptop.
+While OS X does come with a default ruby configuration it has some issues which make it a bit harder to use.
+Both rvm and rbenv are fairly easy to setup. For an even simpler option you can use the [Rails Installer](http://railsinstaller.org/). This will set you up with rvm (along with a bunch of other useful tools).
 
 Setup Instructions
 =====
-
-Because we'll be testing an iOS application you will need a mac laptop ***with XCode and [XCode command-line tools](http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools) installed***.
 
 These instructions assume basic familiarity with the terminal. 
 
@@ -24,7 +28,7 @@ Next you'll need to install a couple of ruby gems (a *gem* is a packaged ruby li
 sudo gem install frank-cucumber pry --no-rdoc --no-ri
 ```
 
-If you're using a system like [rvm](https://rvm.io/rvm/install/) or [rbenv](https://github.com/sstephenson/rbenv/#installation) to manage the ruby setup on your machine (and I recommend that you do) then you probably won't need to use sudo in that command.
+You only need to the `sudo` part if you're using the default ruby install. If you're using rvm or rbenv you can leave that part off.
 
 Once you've done that you should be able to run the `frank` command in the terminal, and get output something like this:
 ```
