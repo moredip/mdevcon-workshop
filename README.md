@@ -25,7 +25,7 @@ git clone https://github.com/moredip/mdevcon-workshop.git ./
 
 Next you'll need to install a couple of ruby gems (a *gem* is a packaged ruby library). You can do that using the following command:
 ``` bash
-sudo gem install frank-cucumber pry --no-rdoc --no-ri
+sudo gem install frank-cucumber pry pry-debugger --no-rdoc --no-ri
 ```
 
 You only need to the `sudo` part if you're using the default ruby install. If you're using rvm or rbenv you can leave that part off.
