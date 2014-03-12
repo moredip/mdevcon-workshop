@@ -1,5 +1,5 @@
 (function() {
-  var baseUrlFor, cacheBust, displayErrorResponse, fetchOrientation, fetchViewHierarchy, isErrorResponse, requestSnapshotRefresh, sendMapRequest;
+  var baseUrlFor, cacheBust, displayErrorResponse, fetchResolution, fetchOrientation, fetchViewHierarchy, fetchDevice, isErrorResponse, requestSnapshotRefresh, sendMapRequest;
 
   cacheBust = function(url) {
     return "" + url + "?" + ((new Date()).getTime());
@@ -26,6 +26,19 @@
     });
   };
 
+  fetchResolution = function() {
+    var deferable, request;
+    deferable = new $.Deferred();
+    request = $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: baseUrlFor("/resolution")
+    }).done(function(response) {
+      return deferable.resolve(response || 'unknown');
+    }).fail(deferable.reject);
+    return deferable.promise();
+  };
+
   fetchOrientation = function() {
     var deferable, request;
     deferable = new $.Deferred();
@@ -35,6 +48,19 @@
       url: baseUrlFor("/orientation")
     }).done(function(response) {
       return deferable.resolve(response && response.detailed_orientation || 'unknown');
+    }).fail(deferable.reject);
+    return deferable.promise();
+  };
+
+  fetchDevice = function() {
+    var deferable, request;
+    deferable = new $.Deferred();
+    request = $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: baseUrlFor("/device")
+    }).done(function(response) {
+      return deferable.resolve(response && response.device || 'unknown');
     }).fail(deferable.reject);
     return deferable.promise();
   };
@@ -83,10 +109,12 @@
   define(function() {
     return {
       fetchViewHierarchy: fetchViewHierarchy,
+      fetchResolution: fetchResolution,
       fetchOrientation: fetchOrientation,
+      fetchDevice: fetchDevice,
       requestSnapshotRefresh: requestSnapshotRefresh,
       baseScreenshotUrl: function() {
-        return cacheBust(baseUrlFor('/screenshot'));
+        return cacheBust(baseUrlFor('/screenshot/allwindows/'));
       },
       snapshotUrlForViewWithUid: function(uid) {
         return cacheBust(baseUrlFor("/screenshot/view-snapshot/" + uid));
