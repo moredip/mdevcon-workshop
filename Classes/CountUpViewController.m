@@ -228,7 +228,7 @@
 			nvCell.value.tag = TAG_GROUP_FIELD;
 			nvCell.name.text = @"Group:";
 			nvCell.value.placeholder = @"Group Name";
-			nvCell.value.autocapitalizationType = UITextAutocapitalizationTypeWords;
+			nvCell.value.autocapitalizationType = UITextAutocapitalizationTypeNone;
 			textFieldGroup = nvCell.value;
 			break;
 		}
@@ -241,7 +241,7 @@
 					nvCell.value.tag = TAG_NAME_FIELD;
 					nvCell.name.text = @"Name:";
 					nvCell.value.placeholder = @"Counter Name";
-					nvCell.value.autocapitalizationType = UITextAutocapitalizationTypeWords;
+					nvCell.value.autocapitalizationType = UITextAutocapitalizationTypeNone;
 
 					textFieldName = nvCell.value;
 					break;

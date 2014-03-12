@@ -19,8 +19,10 @@ When /^I choose CountUp$/ do
 end
 
 When /^I enter a group name of "(.*?)"$/ do |group_name|
+  wait_for_nothing_to_be_animating
   touch %Q|view:'UITextFieldLabel' marked:'Group Name'|
   wait_for_nothing_to_be_animating
+  sleep 0.5
   type_into_keyboard group_name
 end
 
