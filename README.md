@@ -25,11 +25,8 @@ git clone https://github.com/moredip/mdevcon-workshop.git ./
 
 Next you'll need to install a couple of ruby gems (a *gem* is a packaged ruby library). You can do that using the following command:
 ``` bash
-sudo bundle install --path=vendor/bundle
+bundle install --path=vendor/bundle
 ```
-
-You only need to the `sudo` part if you're using the default ruby install. If you're using rvm or rbenv you can leave that part off.
-
 Once you've done that you should be able to run the `frank` command in the terminal, and get output something like this:
 ```
 ⋙ frank
