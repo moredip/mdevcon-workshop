@@ -9,7 +9,7 @@ unless system("which frank > /dev/null")
     You don't appear to have the frank-cucumber gem installed. 
     Run the following command and then try again:
 
-    sudo gem install frank-cucumber
+    sudo bundle install --path=vendor/bundle
   EOS
   exit 1
 end
@@ -23,6 +23,8 @@ puts 'using Frank to launch the app...'
 exit 3 unless 0 == $?
 
 puts 'verifying we can talk to the Frankified app...'
+sleep 5
+
 def World(_)
 end
 def AfterConfiguration
