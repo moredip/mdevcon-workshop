@@ -14,6 +14,7 @@ When /^I touch the Add button$/ do
 end
 
 When /^I choose CountUp$/ do
+  wait_for_nothing_to_be_animating
   touch %Q|button marked:'CountUp'|
   wait_for_nothing_to_be_animating
 end
@@ -21,13 +22,16 @@ end
 When /^I enter a group name of "(.*?)"$/ do |group_name|
   wait_for_nothing_to_be_animating
   touch %Q|view:'UITextFieldLabel' marked:'Group Name'|
+  sleep 0.5
   wait_for_nothing_to_be_animating
   sleep 0.5
   type_into_keyboard group_name
 end
 
 When /^I enter a counter name of "(.*?)"$/ do |counter_name|
+  wait_for_nothing_to_be_animating
   touch %Q|view:'UITextFieldLabel' marked:'Counter Name'|
+  sleep 0.5
   wait_for_nothing_to_be_animating
   type_into_keyboard counter_name
 end
